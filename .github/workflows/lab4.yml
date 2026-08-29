@@ -1,0 +1,24 @@
+name: Lab 4 CI Workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  custom-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: System diagnostic
+        run: |
+          echo "=== RUNNING SYSTEM DIAGNOSTIC ==="
+          echo "User: $(whoami)"
+          echo "Date & Time: $(date)"
+
+      - name: Custom project report
+        run: |
+          echo "Lab 4 CI/CD Pipeline executed successfully for Sofiia Shpitser!"
